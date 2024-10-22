@@ -332,17 +332,6 @@ cc_library_shared {
     vendor: true,
 }
 
-cc_library_shared {
-    name: "libcodec2_shim",
-    shared_libs: [
-        "libcodec2_vndk",
-    ],
-    srcs: [
-        "libcodec2/C2Fence.cpp",
-    ],
-    vendor: true,
-}
-
 cc_prebuilt_library_shared {
     name: "libcrypto-v33",
     vendor: true,
@@ -359,14 +348,6 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "both",
     check_elf_files: false,
-}
-
-cc_library {
-    name: "libcrypto_shim",
-    srcs: [
-        "libcrypto/cbs.c",
-    ],
-    vendor: true
 }
 
 cc_library {
@@ -397,22 +378,10 @@ cc_library {
 
 cc_library {
     name: "libhidlbase_shim",
-    srcs: [
-        "libhidlbase/gBnsConstructorMap.cpp",
-        "libhidlbase/Parcel.cpp",
-    ],
+    srcs: ["libhidlbase/gBnsConstructorMap.cpp"],
     shared_libs: ["libhidlbase"],
     compile_multilib: "both",
     vendor: true,
-}
-
-cc_library {
-    name: "libmeminfo_shim",
-    shared_libs: ["libmeminfo"],
-    srcs: [
-        "libmeminfo/procmeminfo.cpp",
-    ],
-    vendor: true
 }
 
 cc_library {
